@@ -2,6 +2,7 @@
   ./alias.nix
   ./config/system-path.nix
   ./config/terminfo.nix
+  ./desktop/wallpaper.nix
   ./documentation
   ./meta.nix
   ./misc/ids.nix
