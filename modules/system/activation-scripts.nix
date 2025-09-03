@@ -134,6 +134,7 @@ in
       ${cfg.activationScripts.fonts.text}
       ${cfg.activationScripts.nvram.text}
       ${cfg.activationScripts.homebrew.text}
+      ${cfg.activationScripts.desktop.text}
 
       ${cfg.activationScripts.postActivation.text}
 

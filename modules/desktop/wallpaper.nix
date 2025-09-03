@@ -32,7 +32,7 @@ in
     ];
 
     system = {
-      activationScripts.wallpaper.text = ''
+      activationScripts.desktop.text = ''
         /usr/bin/osascript -e 'tell application "System Events" to tell every desktop to set picture to "${cfg.image}"'
       '';
     };
