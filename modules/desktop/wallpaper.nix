@@ -11,9 +11,7 @@ in
   meta.maintainers = [ (lib.maintainers.cudatuda or "cudatuda") ];
 
   options.desktop.wallpaper = {
-    enable = lib.mkEnableOption {
-      description = "wallpaper management";
-    };
+    enable = lib.mkEnableOption "wallpaper management";
     image = lib.mkOption {
       type = with lib.types; nullOr (coercedTo package toString path);
       default = null;
