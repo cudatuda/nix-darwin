@@ -23,18 +23,16 @@ in
     };
   };
 
-  config = lib.mkIf cfg.enable {
-    assertions = [
+  config = {
+    assertions = lib.mkIf cfg.enable [
       {
         assertion = cfg.image != null;
         message = "`config.desktop.wallpaper.image` must be specified.";
       }
     ];
 
-    system = {
-      activationScripts.desktop.text = ''
-        /usr/bin/osascript -e 'tell application "System Events" to tell every desktop to set picture to "${cfg.image}"'
-      '';
-    };
+    system.activationScripts.desktop.text = lib.mkIf cfg.enable ''
+      /usr/bin/osascript -e 'tell application "System Events" to tell every desktop to set picture to "${cfg.image}"'
+    '';
   };
 }
